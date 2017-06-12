@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="NewApi">
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--Whole Color-->
+        <item name="colorPrimary">@color/blue_3</item>
+        <item name="colorPrimaryDark">@color/blue_dark_1</item>
+        <item name="colorAccent">@color/white</item>
+        <!--No ActionBar-->
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <!--EditText Bottom Line-->
+    <style name="LoginEditTextTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:colorControlActivated">@color/white</item>
+        <item name="android:colorControlHighlight">@color/white</item>
+    </style>
+
+    <!--InputTextLayout OverFlow Text Style-->
+    <style name="InputTextOverFlowHintStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--InputTextLayout OverFlow Count Text Style-->
+    <style name="InputTextCountOverFlowHintStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--InputTextLayout Error Text Style-->
+    <style name="InputTextErrorTextStyle">
+        <item name="android:textColor">@color/red_1</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
