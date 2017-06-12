@@ -3,11 +3,14 @@ package com.usher.main;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     private TextInputLayout mTilAccount;
     private EditText mEtAccount;
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        mEtAccount.addTextChangedListener(this);
+        mEtPassword.addTextChangedListener(this);
     }
 
     private void initView() {
@@ -39,5 +44,25 @@ public class MainActivity extends AppCompatActivity {
         mTilPassword = (TextInputLayout) findViewById(R.id.til_password);
         mEtPassword = (EditText) findViewById(R.id.et_password);
         mBtnLogin = (Button) findViewById(R.id.btn_login);
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        if (mEtAccount.hasFocus() && !TextUtils.isEmpty(mTilAccount.getError())) {
+            mTilAccount.setError(null);
+        }
+        if (mEtPassword.hasFocus() && !TextUtils.isEmpty(mTilPassword.getError())) {
+            mTilPassword.setError(null);
+        }
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 }
