@@ -26,11 +26,16 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!(mEtAccount.getText().length() > 0)) {
-                    mTilAccount.setError("please input the account");
-                }
-                if (!(mEtPassword.getText().length() > 0)) {
-                    mTilPassword.setError("please input the password");
+                if (!TextUtils.isEmpty(mEtAccount.getText()) && !TextUtils.isEmpty(mEtPassword.getText())) {
+                    AlertShowUtils.showSimpleLoading(MainActivity.this);
+                } else {
+
+                    if (!(mEtAccount.getText().length() > 0)) {
+                        mTilAccount.setError("please input the account");
+                    }
+                    if (!(mEtPassword.getText().length() > 0)) {
+                        mTilPassword.setError("please input the password");
+                    }
                 }
             }
         });
